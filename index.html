@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>canvas</title>
+<style type="text/css">
+* { 
+	margin:0; padding:0;
+ }
+body { 
+	width:100%; 
+	height:100%;
+	/* overflow:hidden; */
+	
+	}
+#main,#time{
+	position: absolute;
+	top: 200px;
+	left: 35%;
+	cursor: pointer;
+}
+#time{
+	left: 47%;
+	top: 300px;
+	font-size: 30px;
+}
+
+#w{
+	/* z-index: -1; */
+	/* opacity: 0.3; */
+	position: relative;
+	
+}
+</style>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+
+</head>
+<body>
+	<audio src="./fireworks.mp3" autoplay="autoplay" loop="loop">
+		当前浏览器不支持audio
+	</audio>
+	<div id="w">
+		<canvas id="c" style="position: absolute;z-index: 0;text-align: center;"></canvas>
+		
+		<div id="main"><h1>xxx和yyy相识了</h1></div>
+		<div id="time"></div>
+	</div>
+	<script type="text/javascript">
+		var now = Date.now()
+		var start = +new Date('2020.4.2')
+		var difer = (now-start)/1000
+		var p = document.querySelector('#time')
+		var s = parseInt(difer)
+		p.innerHTML = s
+		setInterval(()=>{
+			p.innerHTML=parseInt(p.innerHTML)+1
+		},1000)
+	</script>
+
+	<script type="text/javascript" src="js/canvas_bg.js" ></script>
+</body>
+</html>
